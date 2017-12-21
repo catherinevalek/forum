@@ -1,0 +1,8 @@
+<ol>
+	<% @comments.each do | reply | %>
+	  <li><%= reply.body %></li>
+	    <% if reply.comments.count != 0 %>
+	      <%= reply.comments.first.body %>
+	    <% end %>
+	<% end %>
+</ol>

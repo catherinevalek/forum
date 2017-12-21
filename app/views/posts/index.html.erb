@@ -1,0 +1,15 @@
+<ul>
+	<% @posts.each do | post | %>
+	  <li><%= post.title %></li>
+	  <ul>
+			<% post.comments do | comment | %>
+			  <li><%= comment.body %></li>
+				<ul>
+					<% comment.comments do | reply | %>
+					  <li><%= reply.body %></li>
+					<% end %>
+				</ul>
+			<% end %>
+		</ul>
+	<% end %>
+</ul>

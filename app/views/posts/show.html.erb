@@ -1,0 +1,6 @@
+hi <%= @post.title %>
+<ul>
+	<% @post.comments.each do | comment | %>
+		<li><%= comment.body %></li>
+	<% end %>
+</ul>
