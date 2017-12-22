@@ -1,6 +1,13 @@
-hi <%= @post.title %>
+<%= link_to(@post.title, target: "_blank") %><br/>
+<small>Submitted <%= time_ago_in_words(@post.created_at) %> ago</small>
+
+<h3>Comments</h3>
+
+<%= form_for [@post, Comment.new] do |f| %>
+<%= f.text_area :body, placeholder: "Add a comment" %><br/>
+<%= f.submit "Add Comment" %>
+<% end %>
+
 <ul>
-	<% @post.comments.each do | comment | %>
-		<li><%= comment.body %></li>
-	<% end %>
+  <%= render partial: "comments/comment", layout: false, collection: @post.comments %>
 </ul>

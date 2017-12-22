@@ -7,11 +7,12 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @commentable.comments.new comment_params
+    @comment.commenter = current_user
 
     if @comment.save
-      redirect_to :back, notice: 'Your comment was successfully posted!'
+      redirect_back(fallback_location: root_path, notice: 'Your comment was successfully posted!') 
     else
-      redirect_to :back, notice: "Your comment wasn't posted!"
+      redirect_back(fallback_location: root_path, notice: "Your comment wasn't posted!")
     end
   end
 
@@ -31,6 +32,6 @@ class CommentsController < ApplicationController
 
   def find_commentable
     @commentable = Comment.find_by_id(params[:comment_id]) if params[:comment_id]
-    @commentable = Story.find_by_id(params[:story_id]) if params[:story_id]
+    @commentable = Post.find_by_id(params[:post_id]) if params[:post_id]
   end
 end
