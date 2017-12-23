@@ -1,1 +1,8 @@
-hi <%= current_user.email %>
+hi <%= current_user.email if current_user %>
+<ul>
+  <% @categories.each do | category | %>
+		<li>
+			<%= link_to category.title, category %>
+		</li>
+	<% end %>
+</ul>

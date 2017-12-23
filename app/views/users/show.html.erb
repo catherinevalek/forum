@@ -1,1 +1,14 @@
 hi <%= current_user.email %>
+
+<h2> My posts </h2>
+<% if @user.posts.any? %>
+	<% @user.posts.each do | post | %>
+		<hr>
+		<h3><%= link_to post.title, post %></h3>
+		<small><%= link_to "Edit", edit_post_path(:post => post.id), :class => "btn btn-primary btn-sm"
+			%></small>
+	<% end %>
+<% else %>
+		<p>You currently have no rentals.</p>            
+<% end %>
+

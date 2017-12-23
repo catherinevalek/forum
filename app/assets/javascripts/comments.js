@@ -5,7 +5,4 @@ $( document ).ready(function() {
   	heightStyle: "content"
   	// this.show()
   });
-
-  $('.accordion-content').show();
-
 });
