@@ -9,5 +9,7 @@
 <% end %>
 
 <ul>
-  <%= render partial: "comments/comment", layout: false, collection: @post.comments %>
+  <div class="accordion">
+  	<%= render partial: "comments/comment", layout: false, collection: @post.comments %>
+  </div>
 </ul>

@@ -1,14 +1,18 @@
+<h5><%= comment.commenter.email %></h5>
+<div>
 <li>
-  <%= comment.body %> -
-  <small>Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
 
+  <h5><%= comment.body %> -
+  <small>Submitted <%= time_ago_in_words(comment.created_at) %> ago</small></h5>
   <%= form_for [comment, Comment.new] do |f| %>
       <%= f.text_area :body, placeholder: "Add a Reply" %><br/>
       <%= f.submit "Reply"  %>
       <% end %>
-
   <ul>
+    <div class="accordion accordion-content">
       <%= render partial: "comments/comment", collection: comment.comments %>
+    </div>
   </ul>
 
 </li>
+</div>
