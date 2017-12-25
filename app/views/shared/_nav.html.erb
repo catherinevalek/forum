@@ -1,15 +1,87 @@
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
-  </li>
-  <li>
-  <%= link_to('Edit registration', edit_user_registration_path) %>
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Register', new_user_registration_path)  %>
-  </li>
-  <li>
-  <%= link_to('Login', new_user_session_path)  %>  
-  </li>
-<% end %>
+
+  <nav role='navigation' class="main-nav" id="main-nav">
+  <ul id="main-nav-list">
+    <li>
+      <%= link_to 'Home', root_path, :class => "navbar-item"  %>
+    </li>
+  <% if user_signed_in? %>
+    <li>
+    <%= link_to'Logout', destroy_user_session_path, method: :delete, :class => "navbar-item"  %>        
+    </li>
+    <li>
+    <%= link_to 'Settings', edit_user_registration_path, :class => "navbar-item"  %>
+    </li>
+  <% else %>
+    <li>
+    <%= link_to 'Register', new_user_registration_path, :class => "navbar-item"   %>
+    </li>
+    <li>
+    <%= link_to 'Login', new_user_session_path, :class => "navbar-item"   %>  
+    </li>
+  <% end %>
+    <li>
+      <h1 class="nav-title">forum</h1>
+    </li>
+    <li><form><input placeholder="search twitter"/><i class="fa fa-search navbar-item"></i></form></li>
+
+</ul>
+</nav>
+<!-- <ul class="twitter" role="navigation">
+    <li><i class="fa fa-home"></i>Home</li>
+    <li><i class="fa fa-bell-o"></i>Notifications</li>
+    <li><i class="fa fa-envelope-o"></i>Messages</li>
+    <li><i class="fa fa-twitter"></i></li>
+    <li><form><input placeholder="search twitter"/><i class="fa fa-search"></i></form></li>
+    <li><i class="fa fa-user-circle-o"></i></li>
+    <li><button>tweet</button></li>
+  </ul> -->
+
+
+ <!--  <nav role='navigation' class="main-nav" id="main-nav">
+  <ul id="main-nav-list">
+    <li>
+      <a href="#">
+        <svg viewBox="0 0 100 100" class="icon">
+          <use xlink:href="#leaf">
+        </svg>
+        <div>
+          Home
+          <span>is where the heart is</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <svg viewBox="0 0 100 100" class="icon">
+          <use xlink:href="#maple-leaf">
+        </svg>
+        <div>
+          About
+          <span>to blow this popcicle stand</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <svg viewBox="0 0 100 100" class="icon">
+          <use xlink:href="#clover">
+        </svg>
+        <div>
+          Clients
+          <span>are beautiful people</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <svg viewBox="0 0 100 100" class="icon">
+          <use xlink:href="#tomato">
+        </svg>
+        <div>
+          Contact
+          <span>your mom she misses you</span>
+        </div>
+      </a>
+    </li>
+  </ul>
+</nav> -->
