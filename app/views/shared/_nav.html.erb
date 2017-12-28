@@ -1,6 +1,6 @@
 
   <nav role='navigation' class="main-nav" id="main-nav">
-  <ul id="main-nav-list">
+  <ul class="main-nav-list" role='navigation'>
     <li>
       <%= link_to 'Home', root_path, :class => "navbar-item"  %>
     </li>
@@ -19,8 +19,8 @@
     <%= link_to 'Login', new_user_session_path, :class => "navbar-item"   %>  
     </li>
   <% end %>
-    <li>
-      <h1 class="nav-title">forum</h1>
+    <li class="nav-title">
+      <p>forum</p>
     </li>
     <li><form><input placeholder="search twitter"/><i class="fa fa-search navbar-item"></i></form></li>
 
