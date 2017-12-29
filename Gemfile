@@ -29,6 +29,7 @@ gem 'devise'
 gem 'faker'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'pry'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
