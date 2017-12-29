@@ -5,7 +5,4 @@ class Vote < ApplicationRecord
 
 	validates :votable, uniqueness: { scope: :user }
 
-	def vote_sum
-    votes.sum(:value)
-  end
 end
