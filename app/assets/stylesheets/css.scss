@@ -1,8 +1,8 @@
 // // navbar
 
-main {
-   width: 70%
-}
+// main {
+//    width: 70%
+// }
 
 .main-nav {
   ul {
@@ -53,6 +53,18 @@ main {
   background: rgba(85,172,238 ,1);
   color: #fff;
   border-radius: 100px;
+}
+
+@media all and (max-width: 600px) {
+  .main-nav
+  {
+    ul
+    {
+      flex-flow: column nowrap;
+      padding: 0;  
+    }    
+  }
+  
 }
 
 // * {
