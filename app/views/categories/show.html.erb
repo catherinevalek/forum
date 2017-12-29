@@ -1,1 +1,6 @@
-hi <%= current_user.email %>
+<h1>Posts</h1>
+<% @category.posts.each do |post| %>
+  <p>
+    <%= link_to(post.title, target: "_blank") %> - <%= link_to("Show Page", post) %>
+  </p>
+<% end %>

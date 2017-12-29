@@ -5,6 +5,8 @@
       <%= link_to 'Home', root_path, :class => "navbar-item"  %>
     </li>
   <% if user_signed_in? %>
+    <li class="navbar-item">hi <%= current_user.email %>
+    </li>
     <li>
     <%= link_to'Logout', destroy_user_session_path, method: :delete, :class => "navbar-item"  %>        
     </li>
@@ -22,7 +24,7 @@
     <li class="nav-title">
       <p>forum</p>
     </li>
-    <li><form><input placeholder="search twitter"/><i class="fa fa-search navbar-item"></i></form></li>
+    <li><form><input placeholder="search forum"/><i class="fa fa-search navbar-item"></i></form></li>
 
 </ul>
 </nav>

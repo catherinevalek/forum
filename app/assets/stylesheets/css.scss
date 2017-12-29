@@ -97,13 +97,13 @@
 // }
 
 .categories {
-      padding: 0;
-    list-style: none;
+  padding: 0;
+  list-style: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
-.categories .topic {
-  width: 32%;
+.categories li {
+  // width: 32%;
 }
 
 @media (max-width: 400px) {
