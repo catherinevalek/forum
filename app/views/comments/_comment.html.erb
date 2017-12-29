@@ -4,6 +4,9 @@
 
   <h5><%= comment.body %> -
   <small>Submitted <%= time_ago_in_words(comment.created_at) %> ago</small></h5>
+  <%= button_to '+1', upvote_comment_path(comment), method: :post %>
+  <%= button_to '-1', downvote_comment_path(comment), method: :post %>
+  <h3><strong>comment votes: <span id='comment-vote-count' data-comment-id="<%= comment.id %>"><%= comment.votes.sum(:value) %></span></strong></h3>
   <%= form_for [comment, Comment.new] do |f| %>
       <%= f.text_area :body, placeholder: "Add a Reply" %><br/>
       <%= f.submit "Reply"  %>
