@@ -1,7 +1,7 @@
 hi <%= current_user.email if current_user %>
-<ul>
+<ul class="categories">
   <% @categories.each do | category | %>
-		<li>
+		<li class="topic">
 			<%= link_to category.title, category %>
 		</li>
 	<% end %>

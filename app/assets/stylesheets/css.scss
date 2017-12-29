@@ -67,6 +67,70 @@
   
 }
 
+
+
+// topic items
+
+// .categories
+// {
+//     padding: 0;
+//     list-style: none;
+
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   height: 400px;
+//   background: yellow;
+// }
+
+// .categories li
+// {
+//   background: red;
+//   color: white;
+//   font-size: 1em;
+//   text-align: center;
+//   line-height: 200px;
+  
+//   width: 200px;
+//   height: 200px;
+//   margin: auto;
+// }
+
+.categories {
+      padding: 0;
+    list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.categories .topic {
+  width: 32%;
+}
+
+@media (max-width: 400px) {
+  .categories {
+    display: block;
+    .topic {
+      width: 100%;
+      margin: 0 0 10px 0;
+    }
+  }
+}
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 20px;
+}
+
+.topic {
+  background: pink;
+  padding: 20px;
+}
+
 // * {
 //   box-sizing: border-box;
 // }
