@@ -1,13 +1,17 @@
-<%= link_to(@post.title, target: "_blank") %><br/>
-<small>Submitted <%= time_ago_in_words(@post.created_at) %> ago</small>
-
    <h1><%= @post.title %></h1>
-  <%= button_to '+1', upvote_post_path(@post), method: :post %>
-<!--   <button name="submit_param" value="submit_value" class="fa fa-sort-asc vote-button q-downvote-button" data-post-id="<%= @post.id%>"></button>
-    <button name="submit_param" value="submit_value" class="fa fa-sort-desc vote-button q-upvote-button" data-post-id="<%= @post.id%>"></button> -->
-      <%= button_to '-1', downvote_post_path(@post), method: :post %>
+   <small>Submitted <%= time_ago_in_words(@post.created_at) %> ago</small>
+
+
 
   <h3><strong>post votes: <span id='post-vote-count'><%= @post.votes.sum(:value) %></span></strong></h3>
+  <span class='votes'>
+  <%= link_to upvote_post_path(@post), method: :post do %>
+  <i class="fa fa-arrow-circle-up"></i>
+<% end %><br>
+  <%= link_to downvote_post_path(@post), method: :post do %>
+  <i class="fa fa-arrow-circle-down"></i>
+<% end %>
+</span>
   <p><%= @post.body %></p>
 <h3>Comments</h3>
 

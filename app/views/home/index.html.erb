@@ -8,8 +8,14 @@
 
 <ul class="trending">
   <% @trending.each do | post | %>
-		<li class="topic">
-			<%= link_to post.title, post %>
+		<li class="popular">
+			<h3><%= link_to post.title, post %></h3>
+			<p><%=post.body%></p>
 		</li>
 	<% end %>
 </ul>
+
+
+<!-- <ul class="fa-ul">
+  <li><i class="fa fa-star-o"></i><span>Name and surnafdddddddddddddds sdgfh dh hdfh df hdsh dfh dsfh sdfhdsfh sdf hsdfhdsfhme</li>
+</ul> -->
