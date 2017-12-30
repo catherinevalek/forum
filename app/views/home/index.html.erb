@@ -5,3 +5,11 @@
 		</li>
 	<% end %>
 </ul>
+
+<ul class="trending">
+  <% @trending.each do | post | %>
+		<li class="topic">
+			<%= link_to post.title, post %>
+		</li>
+	<% end %>
+</ul>
