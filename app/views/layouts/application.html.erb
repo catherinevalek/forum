@@ -16,11 +16,9 @@
   </head>
 
   <body>
-  <div class="wrapper">
   <header class="header">
       <%= render 'shared/nav' %>
   </header>
-  <span class="main">
 	<% if notice %>
 	  <p class="alert alert-success"><%= notice %></p>
 	<% end %>
@@ -28,42 +26,6 @@
 	  <p class="alert alert-danger"><%= alert %></p>
 	<% end %>
     <%= yield %>
-    </span>
-    <footer class="footer">Footer</footer>
-    </div>
   </body>
 </html>
-<!-- 
-<div class="wrapper">
-  <header class="header">Header</header>
-  <article class="main">
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>  
-  </article>
-  <aside class="aside aside-1">Aside 1</aside>
-  <aside class="aside aside-2">Aside 2</aside>
-  <footer class="footer">Footer</footer>
-</div> -->
-
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
-  </head>
-  <body>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">
-        Hello World
-      </h1>
-      <p class="subtitle">
-        My first website with <strong>Bulma</strong>!
-      </p>
-    </div>
-  </section>
-  </body>
-</html> -->
 
