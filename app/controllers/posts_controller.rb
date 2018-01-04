@@ -49,13 +49,24 @@ class PostsController < ApplicationController
 
   def upvote
     @post = Post.find(params[:id])
-    @post.votes.create(value: 1, votable: @post, voter: current_user)
-    redirect_to @post
+    new_vote = @post.votes.new(value: 1, votable: @post, voter: current_user)
+    @votes = @post.votes(:value)
+    if new_vote.save
+      if request.xhr?
+        content_type :json
+        @votes.to_json
+      else
+        redirect_to @post
+      end
+    else
+      status 422
+    end
   end
 
   def downvote
     @post = Post.find(params[:id])
     @post.votes.create(value: -1, votable: @post, voter: current_user)
+
     redirect_to @post
   end
 
