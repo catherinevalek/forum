@@ -50,14 +50,26 @@ class PostsController < ApplicationController
   def upvote
     @post = Post.find(params[:id])
     new_vote = @post.votes.new(value: 1, votable: @post, voter: current_user)
-    @votes = @post.votes(:value)
+    p @post
+    p new_vote
+
     if new_vote.save
-      if request.xhr?
-        content_type :json
-        @votes.to_json
-      else
-        redirect_to @post
-      end
+      p "!!!!!!!!!!!!!"
+      @votes = @post.votes.sum(:value) 
+      p @votes
+        respond_to do |format|
+    format.html { redirect_to @post }
+    format.json { }
+  end
+      # if request.xhr?
+      #         render :partial => "reviews", :layout => false, :locals => { rating: @review}, :formats => [:html]
+
+      #   p "@@@@@@@@@@@@@@@@@@"
+      #   content_type :json
+      #   @votes.to_json
+      # else
+      #   redirect_to @post
+      # end
     else
       status 422
     end

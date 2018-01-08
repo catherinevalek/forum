@@ -10,8 +10,8 @@ $( document ).ready(function() {
   $('.post-show').on('click', '.upvote', function(event) {
     event.preventDefault();
     // console.log("clicked");
-    var button = $(this);
-    var url = '/questions/' + button.data().questionId + '/upvote';
+    var icon = $(this);
+    var url = '/posts/' + icon.data().postId + '/upvote';
 
     $.ajax({
       url: url,
@@ -20,7 +20,7 @@ $( document ).ready(function() {
     })
 
     .done(function(responseData) {
-      button.siblings('h3').children().children().text(responseData)
+      icon.siblings('h3').children().children().text(responseData)
       // console.log(responseData);
     })
 
