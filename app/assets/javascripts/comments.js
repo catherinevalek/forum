@@ -20,7 +20,7 @@ $( document ).ready(function() {
     })
 
     .done(function(responseData) {
-      icon.siblings('h3').children().children().text(responseData)
+      $('#post-vote-count').text(responseData["votes"])
       // console.log(responseData);
     })
 
