@@ -9,7 +9,7 @@ $( document ).ready(function() {
   // Vote buttons for questions
   $('.post-show').on('click', '.upvote', function(event) {
     event.preventDefault();
-    // console.log("clicked");
+    console.log("clicked");
     var icon = $(this);
     var url = '/posts/' + icon.data().postId + '/upvote';
 
@@ -21,7 +21,7 @@ $( document ).ready(function() {
 
     .done(function(responseData) {
       $('#post-vote-count').text(responseData["votes"])
-      // console.log(responseData);
+      console.log(responseData);
     })
 
     .fail(function() {

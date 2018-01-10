@@ -6,10 +6,10 @@
 
   <h3><strong>post votes: <span id='post-vote-count'><%= @votes %></span></strong></h3>
   <span class='votes'>
-  <%= link_to upvote_post_path(@post), method: :post do %>
+  <%= link_to upvote_post_path(@post), method: :post, remote: :true do %>
   <i class="upvote fa fa-arrow-circle-up" data-post-id="<%= @post.id%>"></i>
 <% end %><br>
-  <%= link_to downvote_post_path(@post), method: :post do %>
+  <%= link_to downvote_post_path(@post), method: :post, remote: :true do %>
   <i class="downvote fa fa-arrow-circle-down" data-post-id="<%= @post.id%>"></i>
 <% end %>
 </span>
