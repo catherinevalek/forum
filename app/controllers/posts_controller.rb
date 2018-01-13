@@ -48,40 +48,64 @@ class PostsController < ApplicationController
   end
 
 
+#   def upvote
+#     @post = Post.find(params[:id])
+#     # binding.pry
+#     new_vote = @post.votes.new(value: 1, votable: @post, voter: current_user)
+#     # binding.pry
+#       @votes = @post.votes.sum(:value) 
+# # binding.pry
+#     if new_vote.save
+#       # binding.pry
+#         # respond_to do |format|
+#     # format.html { redirect_to @post }
+#     # content_type :json
+#     # render :json => { votes: @votes }
+#     # binding.pry
+#   # end
+#       # if request.xhr?
+#               # render :partial => "reviews", :layout => false, :locals => { rating: @review}, :formats => [:html]
+
+#         # p "@@@@@@@@@@@@@@@@@@"
+#         # content_type :json
+#         # render json: { votes: @votes }
+#     #   else
+#         redirect_to @post
+#       # end
+#     # else
+#     #   status 422
+#     end
+#   end
+
   def upvote
     @post = Post.find(params[:id])
-    # binding.pry
     new_vote = @post.votes.new(value: 1, votable: @post, voter: current_user)
-    # binding.pry
-      @votes = @post.votes.sum(:value) 
-# binding.pry
     if new_vote.save
-      # binding.pry
-        # respond_to do |format|
-    # format.html { redirect_to @post }
-    # content_type :json
-    render :json => { votes: @votes }
-    # binding.pry
-  # end
-      # if request.xhr?
-              # render :partial => "reviews", :layout => false, :locals => { rating: @review}, :formats => [:html]
-
-        # p "@@@@@@@@@@@@@@@@@@"
-        # content_type :json
-        # render json: { votes: @votes }
-    #   else
-    #     redirect_to @post
-      # end
-    # else
-    #   status 422
+      @votes = @post.votes.sum(:value) 
+      if request.xhr?
+        render json: { votes: @votes }
+      else
+        redirect_to @post
+      end
+    else
+      status 422
     end
   end
 
   def downvote
     @post = Post.find(params[:id])
-    @post.votes.create(value: -1, votable: @post, voter: current_user)
-
-    redirect_to @post
+    new_vote = @post.votes.new(value: -1, votable: @post, voter: current_user)
+    
+    if new_vote.save
+      @votes = @post.votes.sum(:value) 
+      if request.xhr?
+        render json: { votes: @votes }
+      else
+        redirect_to @post
+      end
+    else
+      status 422
+    end
   end
 
 # post '/questions/:id/upvote' do
