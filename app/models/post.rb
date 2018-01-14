@@ -3,4 +3,6 @@ class Post < ApplicationRecord
 	has_many :votes, as: :votable 
 	belongs_to :category, optional: true
 	belongs_to :poster, class_name: 'User', optional: true
+	include PgSearch
+	multisearchable :against => [:title, :body]
 end

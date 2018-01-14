@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
+
   resources :users, only: [:show, :index]
 
   resources :categories
@@ -22,4 +23,6 @@ Rails.application.routes.draw do
       post 'downvote'
     end
   end
+    resources :search, only: [:index]
+
 end

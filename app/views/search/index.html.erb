@@ -1,0 +1,13 @@
+<% if @pg_search_documents %>
+<ul>
+<% @pg_search_documents.each do |pg_search_document| %>
+  <li>
+  <%= link_to pg_search_document.searchable.title, pg_search_document.searchable %>
+</li>
+
+</ul>
+<% end %>
+<% else %>
+
+	<p>No results found</p>
+<% end %>
