@@ -1,27 +1,33 @@
-<% if @pg_search_documents %>
+
 <ul>
-<% @pg_search_documents.each do |pg_search_document| %>
+<% @post_search_documents.each do |post_search_document| %>
 <!-- <#% binding.pry %> -->
-  <% if pg_search_document.searchable_type === "Post" %>
+<% post_search_document.pg_search_highlight %>
   <li>
   <p>Post:</p>
-  <%= link_to pg_search_document.searchable.title, pg_search_document.searchable %>
+  <%= link_to post_search_document.searchable.title, post_search_document.searchable %>
 
 </li>
 <p>
-	  <%= pg_search_document.pg_search_highlight.html_safe %>
-
+	  <%= post_search_document.searchable.body %>
 </p>
-<% else %>
-  <li>
-  <p>Comment:</p>
-  <%= link_to pg_search_document.searchable.body, pg_search_document.searchable %>
-</li>
+
+
 <% end %>
+<% @comment_search_documents.each do |comment_search_document| %>
+<!-- <#% binding.pry %> -->
+  <li>
+  <p>comment:</p>
+  <%= link_to comment_search_document.searchable.body, comment_search_document.searchable %>
+
+</li>
+<p>
+	  <%= comment_search_document.pg_search_highlight.html_safe %>
+</p>
+
 
 <% end %>
 </ul>
 <% else %>
 
 	<p>No results found</p>
-<% end %>
