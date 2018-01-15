@@ -1,10 +1,15 @@
 <% if @pg_search_documents %>
 <ul>
 <% @pg_search_documents.each do |pg_search_document| %>
+  <% if pg_search_document.is_a?(Post) %>
   <li>
   <%= link_to pg_search_document.searchable.title, pg_search_document.searchable %>
 </li>
-
+<% else %>
+  <li>
+  <%= link_to pg_search_document.searchable.body, pg_search_document.searchable %>
+</li>
+<% end %>
 </ul>
 <% end %>
 <% else %>
