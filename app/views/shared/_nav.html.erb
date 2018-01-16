@@ -1,17 +1,12 @@
 
   <nav role='navigation' class="main-nav" id="main-nav">
   <ul class="main-nav-list" role='navigation'>
-    <li>
-      <%= link_to 'Home', root_path, :class => "navbar-item"  %>
-    </li>
   <% if user_signed_in? %>
-    <li class="navbar-item">hi <%= current_user.email %>
-    </li>
     <li>
-    <%= link_to'Logout', destroy_user_session_path, method: :delete, :class => "navbar-item"  %>        
+    <%= link_to current_user.email, edit_user_registration_path, :class => "navbar-item"  %>
     </li>
-    <li>
-    <%= link_to 'Settings', edit_user_registration_path, :class => "navbar-item"  %>
+        <li>
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => "navbar-item"  %>        
     </li>
   <% else %>
     <li>
@@ -22,7 +17,7 @@
     </li>
   <% end %>
     <li class="nav-title">
-      <p>forum</p>
+      <%= link_to 'forum', root_path, :class => "navbar-item"  %>
     </li>
     <li>
 <!--     <form class="navbar-item"> <input type="text" name="query" id="query" placeholder="search forum"/><button type="submit" class="btn btn-success">

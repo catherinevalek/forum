@@ -125,10 +125,23 @@ $gray-lightest:             pink;
   padding: 0;
   list-style: none;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+
+    //   display: flex;
+    // align-items: stretch; /* Default */
+    // justify-content: space-between;
+    // width: 100%;
+    // background: #cacaca;
+    // margin: 0;
+    // padding: 0;
+
 }
 .categories li {
   // width: 32%;
+    //   display: block;
+    // flex: 0 1 auto; /* Default */
+    // list-style-type: none;
+    // background: #fafafa;
 }
 
 @media (max-width: 400px) {
@@ -153,7 +166,10 @@ body {
 
 .topic {
   background: pink;
-  padding: 20px;
+  padding: 80px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  // flex-grow: 1;
 }
 
 .trending {

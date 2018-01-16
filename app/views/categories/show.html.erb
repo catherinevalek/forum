@@ -1,6 +1,16 @@
-<h1>Posts</h1>
+<h1><%= @category.title %></h1>
+<ul class="cards">
 <% @category.posts.each do |post| %>
-  <p>
-    <%= link_to post.title, post %>
-  </p>
-<% end %>
+	<li class="cards__item">
+	<div class="card">
+		<div class="card__content">
+			<div class="card__title">
+				<%= link_to post.title, post %> 
+			</div>
+			<p class="card__text"><%= post.body %> </p>
+		</div>
+		</div>
+	</li>
+	<% end %>
+</ul>
+
