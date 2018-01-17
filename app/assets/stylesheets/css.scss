@@ -1,3 +1,20 @@
+// font-family: 'Lato', sans-serif;
+// font-family: 'Comfortaa', cursive;
+// font-family: 'Vollkorn', serif; maybe for text
+// font-family: 'Arima Madurai', cursive;
+// font-family: 'Taviraj', serif;
+// font-family: 'Cormorant Upright', serif;
+// font-family: 'Bentham', serif;
+// font-family: 'Megrim', cursive; maybe for titles
+// font-family: 'Lancelot', cursive;
+// font-family: 'Plaster', cursive;
+// font-family: 'Fredericka the Great', cursive;
+// font-family: 'Emblema One', cursive;
+// font-family: 'Poiret One', cursive; maybe for titles
+// font-family: 'Codystar', cursive;
+// @import url('https://fonts.googleapis.com/css?family=Arima+Madurai|Bentham|Codystar|Comfortaa|Cormorant+Upright|Emblema+One|Fredericka+the+Great|Lancelot|Lato:100i|Megrim|Plaster|Poiret+One|Taviraj|Vollkorn');
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 
 
 // // main layout
@@ -16,9 +33,22 @@ $gray-lightest:             pink;
 
 // // navbar
 
-// main {
-//    width: 70%
+// #nav-title {
+//    font-family: 'Megrim', cursive;
 // }
+p {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 2px;
+}
+html {
+  font-family: 'Questrial';
+  letter-spacing: 2px;
+}
+
+h1{
+  letter-spacing: 4px;
+  font-size: 1em;
+}
 
 .main-nav {
   ul {
