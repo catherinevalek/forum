@@ -3,21 +3,21 @@
   <ul class="main-nav-list" role='navigation'>
   <% if user_signed_in? %>
     <li>
-    <%= link_to current_user.email, edit_user_registration_path, :class => "navbar-item"  %>
+    <%= link_to current_user.email, edit_user_registration_path, :class => "navbar-item default"  %>
     </li>
         <li>
-    <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => "navbar-item"  %>        
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => "navbar-item default"  %>        
     </li>
   <% else %>
     <li>
-    <%= link_to 'Register', new_user_registration_path, :class => "navbar-item"   %>
+    <%= link_to 'Register', new_user_registration_path, :class => "navbar-item default" %>
     </li>
     <li>
-    <%= link_to 'Login', new_user_session_path, :class => "navbar-item"   %>  
+    <%= link_to 'Login', new_user_session_path, :class => "navbar-item default"   %>  
     </li>
   <% end %>
     <li class="nav-title" id="nav-title">
-      <%= link_to 'forum', root_path, :class => "navbar-item"  %>
+      <%= link_to 'forum', root_path, :class => "navbar-item default"  %>
     </li>
     <li>
 <!--     <form class="navbar-item"> <input type="text" name="query" id="query" placeholder="search forum"/><button type="submit" class="btn btn-success">

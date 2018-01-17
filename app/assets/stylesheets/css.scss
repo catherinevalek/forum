@@ -14,8 +14,7 @@
 // font-family: 'Codystar', cursive;
 // @import url('https://fonts.googleapis.com/css?family=Arima+Madurai|Bentham|Codystar|Comfortaa|Cormorant+Upright|Emblema+One|Fredericka+the+Great|Lancelot|Lato:100i|Megrim|Plaster|Poiret+One|Taviraj|Vollkorn');
 @import url('https://fonts.googleapis.com/css?family=Questrial');
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
-
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,900i');
 
 // // main layout
 
@@ -50,6 +49,46 @@ h1{
   font-size: 1em;
 }
 
+/* visited link */
+a:visited {
+    color: #000066;
+}
+
+/* mouse over link */
+a:hover {
+    color: #80002a;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+
+a.default:visited {
+  color: black;
+  text-decoration: none;
+}
+/* mouse over link */
+a.default:hover {
+    color: #80002a;
+}
+
+/* selected link */
+a.default:active {
+    color: blue;
+}
+
+a {
+  text-decoration: none;
+}
+
+// a:not(.topic):link    { color: black; }
+// a:not(.topic):visited { color: black; }
+
+
+
+
+
 .main-nav {
   ul {
     padding: 0;
@@ -75,32 +114,35 @@ h1{
 
   color: rgba(85,172,238 ,1);
   font-size: 1.3em;
-
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 2px;
+    font-style: italic;
+  font-weight: 400;
 }
 
-.main-nav-list li {
-  cursor: pointer;
-}
-.main-nav-list li:hover{
-  color: rgba(85,172,238 ,1);
-}
-.nav-title {
-  color: rgba(85,172,238 ,1);
-  font-size: 1.3em;
-}
-.main-nav-list li:not(:last-child):not(.nav-title) {
-  margin-right: 10px;
-}
-.main-nav-list li  i:not(.fa-main-nav-list):not(.fa-search):not(.fa-user-circle-o) {
-  margin-right: 3px;
-}
-.main-nav-list li > button {
-  font-size: 0.8em;
-  border: 0;
-  background: rgba(85,172,238 ,1);
-  color: #fff;
-  border-radius: 100px;
-}
+// .main-nav-list li {
+//   cursor: pointer;
+// }
+// .main-nav-list li:hover{
+//   color: rgba(85,172,238 ,1);
+// }
+// .nav-title {
+//   color: rgba(85,172,238 ,1);
+//   font-size: 1.3em;
+// }
+// .main-nav-list li:not(:last-child):not(.nav-title) {
+//   margin-right: 10px;
+// }
+// .main-nav-list li  i:not(.fa-main-nav-list):not(.fa-search):not(.fa-user-circle-o) {
+//   margin-right: 3px;
+// }
+// .main-nav-list li > button {
+//   font-size: 0.8em;
+//   border: 0;
+//   background: rgba(85,172,238 ,1);
+//   color: #fff;
+//   border-radius: 100px;
+// }
 
 @media all and (max-width: 600px) {
   .main-nav
