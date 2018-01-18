@@ -3,10 +3,13 @@
   <ul class="main-nav-list" role='navigation'>
   <% if user_signed_in? %>
     <li>
-    <%= link_to current_user.email, edit_user_registration_path, :class => "navbar-item default"  %>
+      <%= link_to edit_user_registration_path, :class => "navbar-item default top" do %>
+  <i class="downvote fa fa-user-circle"></i><h2 id="profile">Profile</h2>
+<% end %>
+    <!-- <#%= link_to current_user.email, edit_user_registration_path, :class => "navbar-item default top"  %> -->
     </li>
         <li>
-    <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => "navbar-item default"  %>        
+    <!-- <#%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => "navbar-item default"  %>         -->
     </li>
   <% else %>
     <li>
@@ -24,7 +27,7 @@
     <i class="fa fa-search"></i>
 </button>
 </form> -->
-<%= form_tag search_index_path, method: :get, :class => "navbar-item" do %>
+<%= form_tag search_index_path, method: :get, :class => "navbar-item bottom" do %>
   <%= text_field_tag :query, params[:query] %>
   <%= submit_tag "GO", name: nil %>
 <% end %>
