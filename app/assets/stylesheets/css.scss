@@ -520,3 +520,32 @@ li:before {
 }
 
 
+
+// form css
+  .flex-form {
+    background-color: whitesmoke;
+    list-style-type: none;
+    padding: 0;
+    border-radius: 3px;
+  }
+  .form-item {
+    display: flex;
+    justify-content: flex-end;
+    padding: .5em;
+  }
+  .form-item > label {
+    padding: .5em 1em .5em 0;
+    flex: 1;
+  }
+  .form-item > .form-control {
+    flex: 2;
+  }
+  .form-item > .form-control,
+  .form-item > .btn {
+    padding: .5em;
+  }
+  .form-item > .btn {
+   background: gray;
+   color: white;
+   border: 0;
+  }

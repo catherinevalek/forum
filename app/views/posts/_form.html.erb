@@ -1,0 +1,18 @@
+<%= form_for @post, :html => {:class => "flex-form"} do |f| %>
+<%= render 'shared/error_messages', :target => @post %>
+    <div class="form-item" >
+      <%= f.label :title, "Title" %>
+      <%= f.text_field :title, :class => "form-control" %>
+    </div>
+    <div class="form-item" >
+      <%= f.label :body, "Body" %>
+      <%= f.text_field :body, :class => "form-control" %>
+    </div>
+ <div class="form-item">
+  <%= f.submit yield(:button_text), :class => "btn" %>
+</div>
+<% end %>
+
+
+
+
