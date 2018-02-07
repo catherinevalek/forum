@@ -17,10 +17,10 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-
+    @post.category_id = 1
+    @post.poster = current_user
     if @post.save
-      log_in @post
-      flash[:success] = "Account created!"
+      flash[:success] = "Post created!"
       redirect_to @post
     else
       render :new
@@ -149,6 +149,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:first_name, :last_name, :email, :host, :birthday, :phone_number, :password, :password_confirmation)
+    params.require(:post).permit(:title, :body)
   end
 end

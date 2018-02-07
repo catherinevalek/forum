@@ -1,31 +1,28 @@
    <div class="post-show">
-   <h1><%= @post.title %></h1>
-   <small>Submitted <%= time_ago_in_words(@post.created_at) %> ago</small>
+     <h1><%= @post.title %></h1>
+     <small>Submitted <%= time_ago_in_words(@post.created_at) %> ago</small>
+     <h3><strong>post votes: <span id='post-vote-count'><%= @votes %></span></strong></h3>
+     <!-- <span class='votes'> -->
+      <div>
+        <%= link_to upvote_post_path(@post), method: :post, remote: :true do %>
+        <i class="fa fa-arrow-circle-up upvote" data-post-id="<%= @post.id%>"></i>
+        <% end %><br>
+        <%= link_to downvote_post_path(@post), method: :post, remote: :true do %>
+        <i class="downvote fa fa-arrow-circle-down" data-post-id="<%= @post.id%>"></i>
+        <% end %>
+      </div>
+    <!-- </span> -->
+    <p><%= @post.body %></p>
+    <h3>Comments</h3>
 
+    <%= form_for [@post, Comment.new] do |f| %>
+    <%= f.text_area :body, placeholder: "Add a comment" %><br/>
+    <%= f.submit "Add Comment" %>
+    <% end %>
 
-
-  <h3><strong>post votes: <span id='post-vote-count'><%= @votes %></span></strong></h3>
-  <span class='votes'>
-  <div class="upvote">
-  <%= link_to upvote_post_path(@post), method: :post, remote: :true do %>
-  <i class="fa fa-arrow-circle-up" data-post-id="<%= @post.id%>"></i>
-<% end %><br>
-</div>
-  <%= link_to downvote_post_path(@post), method: :post, remote: :true do %>
-  <i class="downvote fa fa-arrow-circle-down" data-post-id="<%= @post.id%>"></i>
-<% end %>
-</span>
-  <p><%= @post.body %></p>
-<h3>Comments</h3>
-
-<%= form_for [@post, Comment.new] do |f| %>
-<%= f.text_area :body, placeholder: "Add a comment" %><br/>
-<%= f.submit "Add Comment" %>
-<% end %>
-
-<ul>
-  <div class="accordion">
-  	<%= render partial: "comments/comment", layout: false, collection: @post.comments %>
-  </div>
-</ul>
-</div>
+    <ul>
+      <div class="accordion">
+       <%= render partial: "comments/comment", layout: false, collection: @post.comments %>
+     </div>
+   </ul>
+ </div>

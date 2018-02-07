@@ -7,11 +7,12 @@ $( document ).ready(function() {
   // });
 
   // Vote buttons for questions
-  $('.post-show').one('click', '.upvote', function(event) {
+  $('.post-show').on('click', '.upvote', function(event) {
     event.preventDefault();
+    event.stopPropagation();
     console.log("clicked");
-    // $(this).off('click')
-    var icon = $(this).find("i");
+
+    var icon = $(this)
     var url = '/posts/' + icon.data().postId + '/upvote';
 
     $.ajax({
@@ -30,12 +31,13 @@ $( document ).ready(function() {
     });
   });
 
-    $('.post-show').one('click', '.downvote', function(event) {
+    $('.post-show').on('click', '.downvote', function(event) {
     event.preventDefault();
+    event.stopPropagation();
     console.log("clicked");
-    // $(this).off('click')
-    var icon = $(this).find("i");
-    var url = '/posts/' + icon.data().postId + '/upvote';
+
+    var icon = $(this)
+    var url = '/posts/' + icon.data().postId + '/downvote';
 
     $.ajax({
       url: url,
