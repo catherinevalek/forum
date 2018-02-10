@@ -20,7 +20,7 @@
     <%= f.submit "Add Comment" %>
     <% end %>
 
-    <ul>
+    <ul class="comment-list">
       <div class="accordion">
        <%= render partial: "comments/comment", layout: false, collection: @post.comments %>
      </div>

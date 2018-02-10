@@ -1,16 +1,18 @@
 <h5><%= comment.commenter.email %></h5>
 <div>
-<li>
+<li data-comment-id="<%= comment.id %>">
 
   <h5><%= comment.body %> -
   <small>Submitted <%= time_ago_in_words(comment.created_at) %> ago</small></h5>
   <%= button_to '+1', upvote_comment_path(comment), method: :post %>
   <%= button_to '-1', downvote_comment_path(comment), method: :post %>
+  <%= link_to "Edit", edit_comment_path(comment), :class => "edit-comment" %>
+
   <h3><strong>comment votes: <span id='comment-vote-count' data-comment-id="<%= comment.id %>"><%= comment.votes.sum(:value) %></span></strong></h3>
   <%= form_for [comment, Comment.new] do |f| %>
       <%= f.text_area :body, placeholder: "Add a Reply" %><br/>
-      <%= f.submit "Reply"  %>
-      <% end %>
+      <%= f.submit "reply", :class => "btn" %>
+  <% end %>
   <ul>
     <div class="accordion accordion-content">
       <%= render partial: "comments/comment", collection: comment.comments %>

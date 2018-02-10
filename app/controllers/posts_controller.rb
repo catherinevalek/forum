@@ -28,11 +28,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def update
-    @post = post.find(params[:id])
+    @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
       flash[:success] = "Your changes have been updated!"
       redirect_to @post
@@ -41,8 +41,8 @@ class PostsController < ApplicationController
     end
   end
 
-  def destroy
-    post.find(params[:id]).destroy
+  def destroy 
+    Post.find(params[:id]).destroy
     flash[:success] = "post deleted"
     redirect_to posts_url
   end

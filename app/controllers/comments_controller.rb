@@ -25,6 +25,11 @@ class CommentsController < ApplicationController
     @votes = @comment.votes.sum(:value)
   end
 
+  def edit
+    @comment = Comment.find(params[:id])
+  end
+
+
   def upvote
     @comment = Comment.find(params[:id])
     @comment.votes.create(value: 1, votable: @comment, voter: current_user)

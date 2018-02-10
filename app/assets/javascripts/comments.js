@@ -55,4 +55,28 @@ $( document ).ready(function() {
     });
   });
 
+  $('.comment-list').on('click', '.edit-comment', function(event) {
+    event.preventDefault();
+    console.log("clicked");
+
+    var icon = $(this)
+    console.log(icon)
+    // var url = '/posts/' + icon.data().postId + '/downvote';
+
+    $.ajax({
+      url: url,
+      type: 'GET',
+      dataType: 'json'
+    })
+
+    .done(function(responseData) {
+      $('#post-vote-count').text(responseData["votes"])
+      console.log(responseData);
+    })
+
+    .fail(function() {
+      alert("You've already voted on this.");
+    });
+  });
+
 });

@@ -1,1 +1,4 @@
-edit.html.erb
+  <%= form_for [comment, Comment.new] do |f| %>
+      <%= f.text_area :body, placeholder: "Add a Reply" %><br/>
+      <%= f.submit "update", :class => "btn" %>
+  <% end %>
