@@ -59,9 +59,9 @@ $( document ).ready(function() {
     event.preventDefault();
     console.log("clicked");
 
-    var icon = $(this)
-    console.log(icon)
-    // var url = '/posts/' + icon.data().postId + '/downvote';
+    var editLink = $(this)
+    console.log(editLink)
+    var url = '/posts/' + icon.data().postId + '/downvote';
 
     $.ajax({
       url: url,
