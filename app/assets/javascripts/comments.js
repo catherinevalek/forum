@@ -61,7 +61,7 @@ $( document ).ready(function() {
 
     var editLink = $(this)
     console.log(editLink)
-    var url = '/posts/' + icon.data().postId + '/downvote';
+    var url = '/comments/' + editLink.parent().data().commentId + '/edit';
 
     $.ajax({
       url: url,
@@ -70,12 +70,13 @@ $( document ).ready(function() {
     })
 
     .done(function(responseData) {
-      $('#post-vote-count').text(responseData["votes"])
+      // $('#post-vote-count').text(responseData["votes"])
       console.log(responseData);
     })
 
     .fail(function() {
-      alert("You've already voted on this.");
+      console.log(responseData);
+      // alert("You've already voted on this.");
     });
   });
 
